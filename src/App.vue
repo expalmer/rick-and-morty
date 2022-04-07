@@ -5,18 +5,18 @@
         <img src="https://logosmarcas.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png">
       </div>
       <input type="text" v-model="name">
-      <button v-on:click="search">Pesquisar </button> 
+      <button v-on:click="search">Search </button> 
     </div>
     
     <div class="card">
       <ul>
         <li v-for="personagem in personagens" :key="personagem.id">
-          <img class="personagens" :src="personagem.image">
-        <div class="informacoes">
+          <img class="imagemPersonagens" :src="personagem.image">
+        <div class="todasInformacoes">
           <h2 class="nome">{{personagem.name}}</h2>
-          <h4>{{personagem.species}}</h4>
-          <h4>{{personagem.gender}}</h4>
-          <h4>{{personagem.status}}</h4>
+          <h4 class="descricao">{{personagem.species}}</h4>
+          <h4 class="descricao">{{personagem.gender}}</h4>
+          <h4 class="descricao">{{personagem.status}}</h4>
         </div>
         </li>
       </ul>
@@ -78,7 +78,7 @@ body{
   height: 30px;
   background: #002128;
   outline: none;
-  border: 0;
+  border:0;
   padding: 0.6rem;
   margin: 1rem;
   font-weight: 800;
@@ -87,19 +87,29 @@ body{
   
 }
 
+.header input:hover{
+  border: 1px solid #00ff97;
+  background: none;
+}
+
 .header button{
-   height: 40px;
+  height: 40px;
   background: #002128;
   outline: none;
-  border: 0;
+  border: 1px solid #002128;
   padding: 0.6rem;
   margin: 1rem;
   font-weight: 700;
   border-radius: 1rem;
   color: rgb(158, 158, 158);
+  margin-bottom: 3rem;
 }
 
-
+.header button:hover{
+  background: none;
+  color:#00ff97;
+  border: 1px solid #00ff97;
+}
 
 .card ul{
   margin: 0px;
@@ -109,7 +119,6 @@ body{
   grid-template-columns: 1fr 1fr 1fr;
   flex-wrap: wrap;
   gap: 20px 20px;
-  
 }
 
 .card ul li{
@@ -121,7 +130,13 @@ body{
  margin: 0px;
  font-family: Arial, Helvetica, sans-serif;
  text-align: center;
+}
 
+.card ul li:hover{
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        transition: all 0.3s ease;
 }
 
 .nome{
@@ -133,23 +148,21 @@ body{
   border-radius: 10px;
 }
 
-.personagens{
+.imagemPersonagens{
    max-width: 50%;
    border-radius: 1rem;
  }
 
-h4{
+.descricao{
    background: #696161;
    border-radius: 1rem;
    width: 100%;
    padding: 0px;
    margin: 0px;
-   margin-bottom: 10px;
-  
-   
+   margin-bottom: 10px; 
  }
  
- .informacoes {
+ .todasInformacoes {
    padding: 0.4rem;
    text-align:center;
    color: white;
@@ -161,4 +174,27 @@ h4{
    width: 100%;
  }
 
+@media  (max-width: 900px) {
+
+.card ul{
+  width: 90%;
+  grid-template-columns: 1fr;
+}
+.ImagemPersonagens {
+  display: flex;
+  align-items: center;
+}
+
+.descricao{
+   background: #696161;
+   border-radius: 1rem;
+   width: 96%;
+   padding: 10px;
+   margin: 0px;
+   margin-bottom: 30px; 
+ } 
+}
+
+
 </style>
+
