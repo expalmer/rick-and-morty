@@ -69,6 +69,8 @@ body{
   display: flex;
   flex-direction: column;
 }
+
+
  .logo img{
    max-width: 400px;
    justify-content: center;
@@ -176,23 +178,52 @@ body{
 
 @media  (max-width: 900px) {
 
-.card ul{
+ .logo img{
+   max-width: 100%;
+ }
+
+.card{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+  .card ul{
   width: 90%;
   grid-template-columns: 1fr;
 }
-.ImagemPersonagens {
-  display: flex;
-  align-items: center;
+
+  .nome{
+  margin-bottom: 20px;
+}
+  .descricao{
+   width: 96%;
+   padding: 7px;
+   margin: 0px;
+   margin-bottom: 35px; 
+ } 
 }
 
-.descricao{
-   background: #696161;
-   border-radius: 1rem;
+@media  (min-width: 1400px) {
+  .nome{
+  margin-bottom: 10px;
+}
+  .descricao{
    width: 96%;
-   padding: 10px;
-   margin: 0px;
-   margin-bottom: 30px; 
+   padding: 5px;
+   margin: 0;
+   margin-bottom: 20px; 
  } 
+
+}
+
+@media  (min-width: 1500px) {
+  .descricao{
+   padding: 5px;
+   margin: 0;
+   margin-bottom: 25px; 
+ } 
+
 }
 
 
