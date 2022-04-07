@@ -51,11 +51,13 @@ export default {
 
 <style>
 
+body{
+ background: rgb(40, 40, 40);
+}
 
 .app{
   margin:auto;
   max-width: 100%;
-  background: rgb(40, 40, 40);
   padding: 40px;
   color:#fff;
 }
@@ -63,11 +65,9 @@ export default {
 .header{
   margin:auto;
   max-width: 300px;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr;
   gap: 10px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
  .logo img{
    max-width: 400px;
@@ -75,11 +75,28 @@ export default {
  }
 
 .header input{
-  height: 40px;
+  height: 30px;
+  background: #002128;
+  outline: none;
+  border: 0;
+  padding: 0.6rem;
+  margin: 1rem;
+  font-weight: 800;
+  border-radius: 1rem;
+  color: white;
+  
 }
 
 .header button{
-  height: 40px;
+   height: 40px;
+  background: #002128;
+  outline: none;
+  border: 0;
+  padding: 0.6rem;
+  margin: 1rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  color: rgb(158, 158, 158);
 }
 
 
@@ -100,68 +117,48 @@ export default {
  padding: 1rem;
  border-radius: 1rem;
  list-style: none;
- 
+ display: flex;
+ margin: 0px;
+ font-family: Arial, Helvetica, sans-serif;
+ text-align: center;
+
 }
 
 .nome{
   color: #1b1b1b;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1rem;
-  padding: 1rem 0;
+  padding: 1rem ;
   background: #00ff97;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+  border-radius: 10px;
 }
 
- .personagens{
-   display: flex;
+.personagens{
    max-width: 50%;
    border-radius: 1rem;
  }
 
- h4{
-   
-   justify-content: center;
-   margin: 1rem;
- }
-
- .informacoes{
-   display: table-column;
-
- }
-
-
-
- /* template { 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #111;
-  
-  }
-
-  ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  ul li {
-    list-style: none;
-    width: 180px;
-    height: auto;
-    padding: 10px;
-  }
-  img {
-    width: 100%;
-    height: auto;
-  }
-
- li{
-   background: rgb(129, 200, 141);
+h4{
+   background: #696161;
+   border-radius: 1rem;
+   width: 100%;
+   padding: 0px;
+   margin: 0px;
    margin-bottom: 10px;
-   margin-right: 10px;
-  border-radius: 10px;
- }*/
+  
+   
+ }
+ 
+ .informacoes {
+   padding: 0.4rem;
+   text-align:center;
+   color: white;
+   border-radius: 1rem;
+   display: table-column;
+   justify-content: center;
+   margin: 0 auto;
+   font-weight: inherit;
+   width: 100%;
+ }
 
 </style>
