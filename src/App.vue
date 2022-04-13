@@ -4,13 +4,18 @@
       <div class="logo">
         <img src="./assets/logo.png">
       </div>
-      <input type="text" v-model="name">
-      <button v-on:click="search">Search </button> 
+      <input v-on:keyup="search" type="text" v-model="name">
+      <select v-model="species">
+        <option value=""> - </option>
+        <option value="Human">Humanos</option>
+        <option value="Alien">Alien</option>
+      </select>
+      <!-- <button v-on:click="search">Search </button>  -->
     </div>
     
     <div class="card">
       <ul>
-        <li v-for="personagem in personagens" :key="personagem.id">
+        <li v-for="personagem in list() " :key="personagem.id">
           <img class="imagemPersonagens" :src="personagem.image">
         <div class="todasInformacoes">
           <h2 class="nome">{{personagem.name}}</h2>
@@ -29,7 +34,8 @@ export default {
   data() {
     return {
       name: "",
-      personagens:[]
+      personagens:[],
+      species:""
     };
   },
 
@@ -39,10 +45,16 @@ export default {
     .then((data) => (this.personagens = data.results));
     },
   methods:{
-    search(){
-    fetch(`https://rickandmortyapi.com/api/character?name=${this.name}`)
-    .then((response) => response.json())
-    .then((data) => (this.personagens = data.results));
+   search(){
+    console.log(this.name)
+    },
+    list(){
+        return this.personagens.filter(personagem => {
+          // return personagem.name.toLowerCase().match(this.name.toLowerCase())
+          if (!this.species) return true
+          return personagem.species === this.species
+
+        })
     }
   }
   
