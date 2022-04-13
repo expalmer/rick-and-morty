@@ -2,7 +2,7 @@
   <div class="app">
     <div class="header"> 
       <div class="logo">
-        <img src="https://logosmarcas.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png">
+        <img src="./assets/logo.png">
       </div>
       <input type="text" v-model="name">
       <button v-on:click="search">Search </button> 
