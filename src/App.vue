@@ -5,10 +5,10 @@
         <img src="./assets/logo.png">
       </div>
       <input v-on:keyup="search" type="text" v-model="name">
-      <select v-model="species">
-        <option value=""> - </option>
-        <option value="Human">Humanos</option>
-        <option value="Alien">Alien</option>
+      <select class="selec" v-model="species">
+        <option class="selec" value=""> - </option>
+        <option class="selec" value="Human">Humanos</option>
+        <option class="selec" value="Alien">Alien</option>
       </select>
       <!-- <button v-on:click="search">Search </button>  -->
     </div>
@@ -88,7 +88,7 @@ body{
    justify-content: center;
  }
 
-.header input{
+.header input {
   height: 30px;
   background: #002128;
   outline: none;
@@ -96,6 +96,19 @@ body{
   padding: 0.6rem;
   margin: 1rem;
   font-weight: 800;
+  border-radius: 1rem;
+  color: white;
+  
+}
+
+.selec {
+  height: 45px;
+  background: #002128;
+  outline: none;
+  border:0;
+  padding: 0.6rem;
+  margin: 2rem;
+  font-weight: 900;
   border-radius: 1rem;
   color: white;
   
